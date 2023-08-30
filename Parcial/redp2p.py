@@ -59,5 +59,4 @@ server_thread.start()
 
 # Crear un nuevo bloque y enviarlo a otro nodo (para probar)
 new_block = create_block(blockchain[-1]['hash'], ['tx3', 'tx4'])
-# Descomente la siguiente línea para enviar el nuevo bloque a otro nodo
-# connect_to_node("127.0.0.1", 9999, new_block)
+
