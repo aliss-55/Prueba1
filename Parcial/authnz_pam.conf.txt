@@ -1,0 +1,27 @@
+<Directory "/var/www/html/archivos_privados">
+    AuthType Basic
+    AuthName "archivos_privados"
+    AuthUserFile /etc/httpd/claves
+    Require valid-user
+</Directory>
+
+# Load the module in /etc/httpd/conf.modules.d/55-authnz_pam.conf
+
+# <Location /login>
+# AuthType Kerberos
+# AuthName "Kerberos Login"
+# KrbMethodNegotiate On
+# KrbMethodK5Passwd Off
+# KrbAuthRealms EXAMPLE.COM
+# Krb5KeyTab /etc/http.keytab
+# KrbLocalUserMapping On
+# Require pam-account webapp
+# </Location>
+#
+# <Location /protected>
+# AuthType Basic
+# AuthName "private area"
+# AuthBasicProvider PAM
+# AuthPAMService webapp
+# Require valid-user
+# </Location>
