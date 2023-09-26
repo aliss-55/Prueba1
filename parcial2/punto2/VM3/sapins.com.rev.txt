@@ -1,0 +1,19 @@
+$ORIGIN 50.168.192.in-addr.arpa.
+$TTL 3H
+@       IN      SOA     servidor3.sapins.com. root@sapins.com. (
+                        0          ; serial
+                        1D         ; refresh
+                        1H         ; retry
+                        1W         ; expire
+                        3H         ; minimum TTL
+                        )
+@       IN      NS      servidor3.sapins.com.
+@       IN      NS      servidor2.sapins.com.
+@       IN      NS      firewall.sapins.com.
+
+;host en la zona
+
+4	IN	PTR     servidor3.sapins.com.
+2	IN	PTR     servidor2.sapins.com.
+3	IN	PTR     firewall.sapins.com.
+fwd

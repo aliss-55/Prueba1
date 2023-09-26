@@ -1,0 +1,15 @@
+#Acomodamos las interfaces
+firewall-cmd --zone=public --remove-interface=eth1 --permanent
+firewall-cmd --zone=dmz --add-interface=eth1 --permanent
+firewall-cmd --zone=public --remove-interface=eth2 --permanent
+firewall-cmd --zone=internal --add-interface=eth2 --permanent
+firewall-cmd --reload
+
+#Añadimos servicios, enmascaramientos, direccionamientos y puertos
+firewall-cmd --zone=public --add-masquerade --permanent
+firewall-cmd --zone=public --add-service=ftp --permanent
+firewall-cmd --zone=public --add-service=dns --permanent
+firewall-cmd --zone=public --add-port=53/tcp --permanent
+firewall-cmd --zone=public --add-port=53/udp --permanent
+irewall-cmd --zone=public --add-forward-port=port=53:proto=tcp:toport=53:toaddr=192.168.50.2 --permanent
+firewall-cmd --zone=public --add-forward-port=port=53:proto=udp:toport=53:toaddr=192.168.50.2 --permanent

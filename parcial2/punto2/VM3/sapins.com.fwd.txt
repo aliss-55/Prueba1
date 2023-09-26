@@ -1,0 +1,22 @@
+$ORIGIN sapins.com.
+$TTL 3H
+@       IN      SOA     servidor3.sapins.com. root@sapins.com. (
+                        0          ; serial
+                        1D         ; refresh
+                        1H         ; retry
+                        1W         ; expire
+                        3H         ; minimum TTL
+                        )
+@       IN      NS      servidor3.sapins.com.
+@	IN	NS	servidor2.sapins.com.
+@	IN	NS	firewall.sapins.com.
+
+;host en la zona
+
+@       IN      A       192.168.50.4
+@	IN	A	192.168.50.2
+@	IN	A	192.168.50.3
+@	IN	A	172.16.0.3
+servidor3	IN	A	192.168.50.4
+servidor2	IN	A	192.168.50.2
+firewall	IN	A	192.168.50.3
